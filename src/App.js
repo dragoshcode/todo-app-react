@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='App min-h-screen bg-gradient-to-r from-yellow-300 to-amber-400'>
       <Form inputValue={inputValue} setInputValue={setInputValue} todos={todos} setTodos={setTodos}/>
-      <List />
+      <List todos={todos}/>
     </div>
   );
 }

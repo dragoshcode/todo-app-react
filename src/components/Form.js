@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React from 'react';
 
 function Form({ inputValue, setInputValue, todos, setTodos }) {
   const handleInputValue = (e) => {
@@ -16,6 +16,7 @@ function Form({ inputValue, setInputValue, todos, setTodos }) {
         id: Math.floor(Math.random() * 5000),
       },
     ]);
+    setInputValue('')
   };
 
   return (
@@ -28,6 +29,7 @@ function Form({ inputValue, setInputValue, todos, setTodos }) {
           onChange={handleInputValue}
           type='text'
           className='p-2 outline-none'
+          value={inputValue}
         />
         <button>
           <i className='fa-solid fa-circle-plus mr-2 text-yellow-500 text-2xl hover:bg-yellow-200 p-2 w-full transition duration-300 '></i>

@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react';
+import TodoItem from './TodoItem';
 
-function List() {
+function List({ todos }) {
   return (
-    <div>
-        <ul>
-            <h2>{}</h2>
-        </ul>
+    <div className='mt-10'>
+      <ul className='w-1/2 mx-auto'>
+        {todos.map((todo) => (
+          <TodoItem text={todo.text} />
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
 
-export default List
+export default List;
