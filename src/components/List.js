@@ -3,7 +3,9 @@ import React from 'react'
 function List() {
   return (
     <div>
-        <ul></ul>
+        <ul>
+            <h2>{}</h2>
+        </ul>
     </div>
   )
 }

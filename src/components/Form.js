@@ -1,14 +1,38 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 
-function Form() {
+function Form({ inputValue, setInputValue, todos, setTodos }) {
+  const handleInputValue = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmitTodo = (e) => {
+    e.preventDefault();
+    setTodos([
+      ...todos,
+      {
+        text: inputValue,
+        done: false,
+        id: Math.floor(Math.random() * 5000),
+      },
+    ]);
+  };
+
   return (
     <div className='flex flex-col sm:flex-row  items-center justify-center gap-4'>
-      <div className='flex bg-white items-center mt-6'>
-        <input type='text' className='p-2 outline-none' />
+      <form
+        onSubmit={handleSubmitTodo}
+        className='flex bg-white items-center mt-6'
+      >
+        <input
+          onChange={handleInputValue}
+          type='text'
+          className='p-2 outline-none'
+        />
         <button>
           <i className='fa-solid fa-circle-plus mr-2 text-yellow-500 text-2xl hover:bg-yellow-200 p-2 w-full transition duration-300 '></i>
         </button>
-      </div>
+      </form>
       <div>
         <select className='bg-white p-2 sm:mt-6'>
           <option value='All'>All</option>
