@@ -19,9 +19,9 @@ function Form({ inputValue, setInputValue, todos, setTodos, setFilter }) {
     setInputValue('');
   };
 
-  const handleFilter = e => {
-    setFilter(e.target.value)
-  }
+  const handleFilter = (e) => {
+    setFilter(e.target.value);
+  };
 
   return (
     <div className='md:mt-40'>
@@ -29,27 +29,27 @@ function Form({ inputValue, setInputValue, todos, setTodos, setFilter }) {
         <h1 className='pt-8 text-2xl'>Dragosh' Todo List</h1>
       </div>
       <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
-      <form
-        onSubmit={handleSubmitTodo}
-        className='flex bg-white items-center mt-6'
-      >
-        <input
-          onChange={handleInputValue}
-          type='text'
-          className='p-2 outline-none'
-          value={inputValue}
-        />
-        <button>
-          <i className='fa-solid fa-circle-plus mr-2 text-yellow-500 text-2xl hover:bg-yellow-200 p-2 w-full transition duration-300 '></i>
-        </button>
-      </form>
-      <div>
-        <select onChange={handleFilter} className='bg-white p-2 sm:mt-6'>
-          <option value='All'>All</option>
-          <option value='Completed'>Completed</option>
-          <option value='Uncompleted'>Uncompleted</option>
-        </select>
-      </div>
+        <form
+          onSubmit={handleSubmitTodo}
+          className='flex bg-white items-center mt-6'
+        >
+          <input
+            onChange={handleInputValue}
+            type='text'
+            className='p-2 outline-none'
+            value={inputValue}
+          />
+          <button>
+            <i className='fa-solid fa-circle-plus mr-2 text-yellow-500 text-2xl hover:bg-yellow-200 p-2 w-full transition duration-300 '></i>
+          </button>
+        </form>
+        <div>
+          <select onChange={handleFilter} className='bg-white p-2 sm:mt-6'>
+            <option value='All'>All</option>
+            <option value='Completed'>Completed</option>
+            <option value='Uncompleted'>Uncompleted</option>
+          </select>
+        </div>
       </div>
     </div>
   );
