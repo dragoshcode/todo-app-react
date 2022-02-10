@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-function Form({ inputValue, setInputValue, todos, setTodos }) {
+function Form({ inputValue, setInputValue, todos, setTodos, setFilter }) {
   const handleInputValue = (e) => {
     setInputValue(e.target.value);
   };
@@ -18,6 +18,10 @@ function Form({ inputValue, setInputValue, todos, setTodos }) {
     ]);
     setInputValue('');
   };
+
+  const handleFilter = e => {
+    setFilter(e.target.value)
+  }
 
   return (
     <div className='md:mt-40'>
@@ -40,7 +44,7 @@ function Form({ inputValue, setInputValue, todos, setTodos }) {
         </button>
       </form>
       <div>
-        <select className='bg-white p-2 sm:mt-6'>
+        <select onChange={handleFilter} className='bg-white p-2 sm:mt-6'>
           <option value='All'>All</option>
           <option value='Completed'>Completed</option>
           <option value='Uncompleted'>Uncompleted</option>
