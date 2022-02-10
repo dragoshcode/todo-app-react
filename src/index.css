@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.done{
+    text-decoration: line-through;
+    opacity: .5;
+}
